@@ -1,9 +1,12 @@
 import { galleryItems } from './gallery-items.js';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-const galleryItemsRef = document.querySelector('.gallery');
 
+
+const galleryItemsRef = document.querySelector('.gallery');
 const listItems = createListItems(galleryItems);
+
+
 function createListItems(items) {
   return items
     .map(
