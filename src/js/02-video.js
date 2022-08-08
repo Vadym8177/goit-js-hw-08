@@ -15,11 +15,10 @@ player.on('timeupdate', throttle(onPlay, 1000));
 const currentTime = localStorage.getItem(LOCAL_STORAGE_KEY);
 const currentTimeParsed = JSON.parse(currentTime);
 
+if (currentTime) {
 player
   .setCurrentTime(currentTimeParsed.seconds)
-  .then(function (seconds) {
-    
-  })
+  .then(function (seconds) {})
   .catch(function (error) {
     switch (error.name) {
       case 'RangeError':
@@ -29,4 +28,6 @@ player
         break;
     }
   });
-
+  return;
+}
+  
